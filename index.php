@@ -1,6 +1,6 @@
 <?php
 
-//conexao entre as pastas
+
 
 
 include 'config.php';

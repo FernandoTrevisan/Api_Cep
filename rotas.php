@@ -9,36 +9,26 @@ switch ($uri)
 {
 
 
-    /**
-     * [ok] Exemplo de Acesso:
-     * 
-     */
+   
 
         case '/endereco/by-cep';
         EnderecoController::getLogradouroByCep();
         break;
 
 
-    /**
-     * [ok] Exemplo de Acesso:
-     * 
-     */
+   
 
         case '/logradouro/by-bairro';
         EnderecoController::getlogradouroByBairroAndCidade();
         break;
-    /**
-     * [ok] Exemplo de Acesso:
-     * 
-     */
+  
+
         
         case '/cidade/by-uf';
         EnderecoController::getCidadesByUF();
         break;
-    /**
-     * [ok] Exemplo de Acesso:
-     * 
-     */
+   
+        
 
        
         case '/bairro/by-cidade';
