@@ -5,7 +5,7 @@ namespace App\DAO;
 
 use App\Model\EnderecoModel;
 
-class ederecoDAO extends DAO
+class EnderecoDAO extends DAO
 {
 
     public function __construct()
@@ -23,7 +23,7 @@ class ederecoDAO extends DAO
         $stmt->bindValue(1,$cep);
         $stmt->execute();
         
-        $endereco_obj= $stmt->fetchObject("ApiCep\Model\EnderecoModel");
+        $endereco_obj= $stmt->fetchObject("App\Model\EnderecoModel");
 
         $endereco_obj->arr_cidades = $this->selectCidadesByUf($endereco_obj->UF);
 
@@ -79,8 +79,6 @@ class ederecoDAO extends DAO
                     $stmt ->execute();
 
                     return $stmt ->fetchAll(DAO::FETCH_CLASS);
-
-
 
         }
 

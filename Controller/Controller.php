@@ -17,7 +17,7 @@ abstract class controller
         exit(json_encode($data));
 
     }
-
+    
     protected static function getExceptionAsJSON(Exception $e)
     {
         $exception = [
@@ -28,7 +28,7 @@ abstract class controller
             'traceAsString' => $e->getTraceAsString(),
             'previous' => $e->getPrevious()
         ];
-
+        
         http_response_code(400);
 
         header("Acess-Control-Allow-Origin: *");
@@ -71,16 +71,11 @@ abstract class controller
         else
             throw new Exception("Varíavel $var_name não identificada.");
     }
- 
+
+
+
+
 
 
 
 }
-
-
-
-
-
-
-
-

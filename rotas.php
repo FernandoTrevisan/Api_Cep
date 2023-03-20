@@ -1,36 +1,24 @@
 <?php
 
-use App\controller\enderecoController;
+use App\controller\EnderecoController;
 
 
-$uri = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+$url = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
 
-switch ($uri)
+switch ($url)
 {
-
-
-   
-
         case '/endereco/by-cep';
         EnderecoController::getLogradouroByCep();
         break;
 
-
-   
-
         case '/logradouro/by-bairro';
         EnderecoController::getlogradouroByBairroAndCidade();
         break;
-  
 
-        
         case '/cidade/by-uf';
         EnderecoController::getCidadesByUF();
         break;
-   
-        
 
-       
         case '/bairro/by-cidade';
         EnderecoController::getBairrosByIdCidade();
         break;

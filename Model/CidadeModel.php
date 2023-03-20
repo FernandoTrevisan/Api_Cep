@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use App\DAO\ederecoDAO;
+use App\DAO\EnderecoDAO;
 
 class CidadeModel extends Model
 {

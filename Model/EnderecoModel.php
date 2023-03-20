@@ -1,75 +1,70 @@
 <?php
 
-namespace app\Model;
+namespace App\Model;
 
-use app\DAO\enderecoDAO;
+use App\DAO\EnderecoDAO;
 use Exception;
 
 class EnderecoModel extends Model
 {
-    public $id_logradouro,$tipo,$descricao,$id_cidade,
-            $uf,$complemento,$descricao_sem_numero,
-            $descricao_cidade,$codigo_cidade_ibge,$descricao_bairro;
+    public $id_logradouro, $tipo, $descricao, $id_cidade,
+        $uf, $complemento, $descricao_sem_numero,
+        $descricao_cidade, $codigo_cidade_ibge, $descricao_bairro;
 
-            public $arr_cidades;
+    public $arr_cidades;
 
-            
-            
-            public function getlogradouroBycep(int $cep)
-            {
-
-                try
-                {
-                    $dao = new enderecoDAO();
-
-                    return $dao ->selectBycep($cep);
-                
-                } catch(Exception $e) {
-
-                    throw $e;
-
-
-            }
-}
-
-public function getcepByLogradouro($logradouro)
-{
-
-    try
+    public function getLogradouroByCep(int $cep)
     {
-        $dao = new enderecoDAO();
-        $this ->rowns = $dao ->selectCepByLogradouro($logradouro);
 
+        try {
+            $dao = new EnderecoDAO();
 
-    } catch(Exception $e) {
+            return $dao->selectBycep($cep);
+        } catch (Exception $e) {
 
-        echo $e ->getMessage();
-
+            throw $e;
+        }
     }
 
-
-
-
-}
-
-public function getBairrosByIdCidade(int $id_cidade)
-{
-    try
+    public function getCepByLogradouro($logradouro)
     {
-        $dao = new enderecoDAO();
-        $this ->rows = $dao ->selectBairroByIdCidade($id_cidade);
 
-    } catch(Exception $e) {
+        try {
+            $dao = new EnderecoDAO();
 
-        echo $e ->getMessage();
+            $this->rows = $dao->selectCepByLogradouro($logradouro);
+        } catch (Exception $e) {
 
+            echo $e->getMessage();
+        }
+    }
+
+    public function getLogradouroByBairroAndCidade(string $bairro,
+    int $id_cidade)
+    {
+        try
+        {
+            $dao = new EnderecoDAO();
+
+            $this->rows = $dao->selectLogradouroByBairroAndCidade($bairro, $id_cidade);
+            
+        }catch(Exception $e)
+        {
+            throw $e;
+        }
 
 
     }
 
+    public function getBairrosByIdCidade(int $id_cidade)
+    {
+        try {
+            $dao = new EnderecoDAO();
 
-    
+            $this->rows = $dao->selectBairrosByIdCidade($id_cidade);
+        } catch (Exception $e) {
 
- }
-
+            echo $e->getMessage();
+        }
+    }
 }

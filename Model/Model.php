@@ -1,7 +1,7 @@
 <?php
 
-namespace ApiCEP\Model;
-
+namespace App\Model;
+                    
 use Exception;
 
 abstract class Model
