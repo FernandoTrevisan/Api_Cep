@@ -8,6 +8,21 @@ use Exception;
 
 class EnderecoController extends Controller
 {
+   
+   /* <"!Teste!">   (*--°°--*)
+
+    public static function teste()
+    {
+        //var_dump("Querid@s Alun@s");
+        //parent:: getResponseAsJSON("Querid@s Alun@s");
+       
+        $cidades =['Jau','Bariri','Itapui','DC'];
+        parent:: getResponseAsJSON($cidades);
+
+    }
+
+    */
+
     public static function getCepByLogradouro(): void  // *-* 
     {
         try
@@ -78,11 +93,16 @@ class EnderecoController extends Controller
     {
         try
         {
-            $id_cidade = parent ::getIntFromUrl(
-                isset ($_GET['id_cidade']) ? $_GET('id_ciade') :null
-            );
-            
+            $id_cidade = parent::getIntFromUrl(isset($_GET['id_cidade']) ? $_GET['id_cidade'] : null);
 
+            $model = new EnderecoModel();
+            $model->getBairrosByIdCidade($id_cidade);
+
+            parent::getResponseAsJSON($model->rows);
+        }
+        catch (Exception $e)
+        {
+            parent::getExceptionAsJSON($e);
         }
 
 
@@ -113,28 +133,3 @@ class EnderecoController extends Controller
 
 
 
-/*
-
-<?php 
-
-namespace app\controller;
-
-include 'controller.php';
-
-class EderecoController extends controller
-{
-
-
-    public static function teste()
-    {
-        //var_dump("Querid@s Alun@s");
-        //parent:: getResponseAsJSON("Querid@s Alun@s");
-       
-        $cidades =['Jau','Bariri','Itapui','DC'];
-        parent:: getResponseAsJSON($cidades);
-
-    }
-
-}
-
-*/
