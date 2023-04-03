@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\controller;
+namespace Appcep\controller;
 
 use Exception;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace Appcep\Model;
 
 class BairroModel extends Model
 {

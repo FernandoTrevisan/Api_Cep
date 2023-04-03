@@ -1,9 +1,9 @@
 <?php 
 
-namespace App\DAO;
+namespace Appcep\DAO;
 
 
-use App\Model\EnderecoModel;
+use Appcep\Model\EnderecoModel;
 
 class EnderecoDAO extends DAO
 {

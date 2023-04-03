@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Controller;
+namespace Appcep\Controller;
 
-use App\Model\{EnderecoModel, CidadeModel};
+use Appcep\Model\{EnderecoModel, CidadeModel};
 use Exception;
 
 class EnderecoController extends Controller
