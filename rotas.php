@@ -7,6 +7,13 @@ $url = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
 
 switch ($url)
 {
+       /* 
+                case '/home':
+                include 'home.php';
+                break;
+
+        */
+
         case '/endereco/by-cep';
         EnderecoController::getLogradouroByCep();
         break;
@@ -31,6 +38,13 @@ switch ($url)
         default;
         http_response_code(403);
         break;
+
+       /*       
+                default:
+                header("Location: /home");
+                break;
+
+        */
 
 }
 
