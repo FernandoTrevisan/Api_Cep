@@ -34,15 +34,15 @@ switch ($url)
 
 }
 
-/* """Rotas""""
+/*                              <<<Rotas>>>
 
 http://localhost:8000/endereco/by-cep?cep=17210580
 
-http://localhost:8000/logradouro/by-bairro?id_cidade=4874&bairro=jardim amériaca
+http://localhost:8000/logradouro/by-bairro?id_cidade=4874&bairro=Jardim América
 
-http://localhost:8000/cep/by-logradouro
+http://localhost:8000/cep/by-logradouro?logradouro=Rua Raphael de Almeida Lei
 
-http://localhost:8000/cidade/by-uf?uf=sp
+http://localhost:8000/cidade/by-uf?uf=SP
 
 http://localhost:8000/bairro/by-cidade?id=4874
 
