@@ -7,15 +7,6 @@ include 'autoload.php';
 include 'rotas.php';
 
 
-
-
-
-
-
-
-
-
-
 /*
 
 $cidades = ['Jaú', 'Bariri', 'Itapuí', 'Dois Córregos'];

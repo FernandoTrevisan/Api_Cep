@@ -61,9 +61,9 @@ switch ($url)
 
 http://localhost:8000/endereco/by-cep?cep=17210580
 
-http://localhost:8000/logradouro/by-bairro?id_cidade=4874&bairro=Jardim América
+http://localhost:8000/logradouro/by-bairro?id_cidade=4874&bairro=JardimAmérica
 
-http://localhost:8000/cep/by-logradouro?logradouro=Rua Raphael de Almeida Lei
+http://localhost:8000/cep/by-logradouro?logradouro=RuaRaphaeldeAlmeidaLei
 
 http://localhost:8000/cidade/by-uf?uf=SP
 
